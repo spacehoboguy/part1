@@ -24,11 +24,11 @@ function App() {
   const [selected, setSelected] = useState(0)
   const [mostVoted, setMostVoted] = useState(null)
   const [votes, setVotes] = useState(zeroArray)
+  
   const handleRandomAnec = () => {
     const randomIndex = Math.floor(Math.random() * anecdotes.length)
     setSelected(randomIndex)
   }
-  console.log(votes)
 
   const handleVote = () => {
     const newVotes = [...votes]
@@ -36,10 +36,6 @@ function App() {
     setVotes(newVotes)
     const highestVote = Math.max(...newVotes, mostVoted)
     const indexOfHighest = newVotes.indexOf(highestVote)
-    // currently only finds the highest number in the array
-    // but i need the index of that array
-    console.log('highest vote',highestVote)
-    console.log('index of highest',indexOfHighest)
     setMostVoted(indexOfHighest)
   }
 
